@@ -105,6 +105,54 @@ html {
   50% { opacity: 1; transform: scale(1); }
 }
 
+/* Global mobile fixes */
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+    width: 100vw;
+  }
+
+  /* Services grid */
+  .services-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  /* Process grid */
+  .process-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+  .process-line {
+    display: none !important;
+  }
+
+  /* Why us grid */
+  .whyus-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+
+  /* Contact grid */
+  .contact-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+  .contact-form-row {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Partners */
+  .partners-logos {
+    flex-wrap: wrap !important;
+    gap: 16px !important;
+  }
+  .partners-logos > div {
+    width: calc(50% - 12px) !important;
+    min-width: auto !important;
+  }
+}
+
 /* Utility styles */
 .text-accent {
   color: var(--color-accent);

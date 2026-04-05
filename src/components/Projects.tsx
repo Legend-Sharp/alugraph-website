@@ -48,14 +48,14 @@ const PROJECTS = [
 
 const GALLERY = [
   [
-    { src: "/images/1.jpg", position: "center" },
-    { src: "/images/3.jpg", position: "center 70%" },
-    { src: "/images/6.jpeg", position: "center 80%" },
+    { src: "/images/1.jpg", position: "center 20%" },
+    { src: "/images/6.jpeg", position: "center 20%" },
+    { src: "/images/2.jpg", position: "center 20%" },
   ],
   [
-    { src: "/images/9.jpeg", position: "center" },
+    { src: "/images/9.jpeg", position: "center 40%" },
+    { src: "/images/8.jpeg", position: "center 10%" },
     { src: "/images/10.jpeg", position: "center 40%" },
-    { src: "/images/8.jpeg", position: "center" },
   ],
 ];
 
@@ -181,6 +181,18 @@ export default function Projects() {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Gallery divider */}
+        <div style={{ marginTop: 60, marginBottom: 40, textAlign: "center" as const }}>
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 12, marginBottom: 12 }}>
+            <div style={{ width: 40, height: 2, background: "#0ea5e9" }} />
+            <span style={{ fontFamily: "'Inter', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: "0.3em", textTransform: "uppercase" as const, color: "#0ea5e9" }}>More Projects</span>
+            <div style={{ width: 40, height: 2, background: "#0ea5e9" }} />
+          </div>
+          <h3 style={{ fontSize: "clamp(22px, 3vw, 30px)", fontWeight: 800, color: "#fff" }}>
+            სხვა <span style={{ color: "#0ea5e9" }}>პროექტები</span>
+          </h3>
         </div>
 
         {/* Gallery */}
@@ -378,7 +390,7 @@ const styles: Record<string, React.CSSProperties> = {
     position: "absolute" as const,
     inset: 0,
     background:
-      "linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.3) 40%, rgba(0,0,0,0.05) 100%)",
+      "linear-gradient(to top, rgba(8,12,20,0.95) 0%, rgba(8,12,20,0.5) 35%, rgba(0,0,0,0.05) 70%)",
     zIndex: 1,
   },
 
@@ -387,7 +399,7 @@ const styles: Record<string, React.CSSProperties> = {
     bottom: 0,
     left: 0,
     right: 0,
-    padding: "28px",
+    padding: "24px",
     zIndex: 2,
   },
 

@@ -47,7 +47,7 @@ export default function Partners() {
         </div>
 
         {/* Logos */}
-        <div className="reveal partners-row" style={styles.logosRow}>
+        <div className="reveal partners-logos" style={styles.logosRow}>
           {PARTNERS.map((p, i) => (
             <div key={i} className="partner-card" style={styles.logoCard}>
               <Image

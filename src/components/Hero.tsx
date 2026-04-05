@@ -63,7 +63,7 @@ export default function Hero() {
   const formatNumber = (n: number) => n.toLocaleString("en-US").replace(",", ",");
 
   return (
-    <section style={styles.section}>
+    <section className="hero-section" style={styles.section}>
       {/* Background Image */}
       <div style={styles.imageWrapper}>
         <Image
@@ -81,9 +81,9 @@ export default function Hero() {
       <div style={styles.orbBottomLeft} />
 
       {/* Content */}
-      <div style={styles.container}>
-        <div style={styles.content}>
-          <h1 style={styles.title}>
+      <div className="hero-container" style={styles.container}>
+        <div className="hero-content" style={styles.content}>
+          <h1 className="hero-title" style={styles.title}>
             <span style={{ display: "block" }}>ალუმინის ფასადები.</span>
             <span style={{ display: "block" }}>მინის სისტემები.</span>
             <span style={{ display: "block", ...styles.gradientText }}>
@@ -91,12 +91,12 @@ export default function Hero() {
             </span>
           </h1>
 
-          <p style={styles.description}>
+          <p className="hero-desc" style={styles.description}>
             ფასადის სისტემები, კარ-ფანჯრები და ვიტრაჟები. თქვენი სანდო
             პარტნიორი მშენებლობაში.
           </p>
 
-          <div style={styles.buttons}>
+          <div className="hero-buttons" style={styles.buttons}>
             <a
               href="#contact"
               style={styles.primaryButton}
@@ -120,10 +120,10 @@ export default function Hero() {
           </div>
 
           {/* Stats */}
-          <div ref={statsRef} style={styles.stats}>
+          <div ref={statsRef} className="hero-stats" style={styles.stats}>
             {COUNTER_DATA.map((item, i) => (
               <div key={i} style={styles.statItem}>
-                <span style={styles.statNumber}>
+                <span className="hero-stat-number" style={styles.statNumber}>
                   {item.format ? formatNumber(counts[i]) : counts[i]}
                   <span style={styles.statSuffix}>{item.suffix}</span>
                 </span>
@@ -153,6 +153,46 @@ export default function Hero() {
           }
           50% {
             transform: translateY(-30px) translateX(15px);
+          }
+        }
+
+
+        @media (max-width: 768px) {
+          .hero-section {
+            padding-top: 80px !important;
+            min-height: 100vh;
+          }
+          .hero-container {
+            padding: 0 20px !important;
+            align-items: flex-start !important;
+          }
+          .hero-content {
+            max-width: 100% !important;
+          }
+          .hero-title {
+            font-size: 26px !important;
+            line-height: 1.2 !important;
+          }
+          .hero-desc {
+            font-size: 14px !important;
+            max-width: 100% !important;
+          }
+          .hero-buttons {
+            flex-direction: column !important;
+            width: 100% !important;
+          }
+          .hero-buttons a {
+            justify-content: center;
+            width: 100%;
+          }
+          .hero-stats {
+            flex-direction: row !important;
+            gap: 24px !important;
+            margin-top: 32px !important;
+            justify-content: flex-start !important;
+          }
+          .hero-stat-number {
+            font-size: 22px !important;
           }
         }
       `}</style>
