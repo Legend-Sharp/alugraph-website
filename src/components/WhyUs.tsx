@@ -80,7 +80,7 @@ export default function WhyUs() {
               />
               {/* Stat card top-left */}
               <div className="whyus-stat" style={{ ...styles.statCard, top: 24, left: -20 }}>
-                <span style={styles.statNumber}>50+</span>
+                <span style={styles.statNumber}>100+</span>
                 <span style={styles.statLabel}>პროექტი</span>
               </div>
               {/* Stat card bottom-right */}

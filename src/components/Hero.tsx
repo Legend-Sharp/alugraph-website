@@ -4,9 +4,9 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
 const COUNTER_DATA = [
-  { target: 50, suffix: "+", label: "დასრულებული პროექტი" },
-  { target: 15000, suffix: " მ²", label: "შემინული ფართობი", format: true },
-  { target: 6, suffix: "+", label: "ევროპული ბრენდი" },
+  { target: 100, suffix: "+", label: "დასრულებული პროექტი" },
+  { target: 20, suffix: "+", label: "წლის გამოცდილება" },
+  { target: 100, suffix: "%", label: "ვადების დაცვა" },
 ];
 
 function easeOutCubic(t: number): number {

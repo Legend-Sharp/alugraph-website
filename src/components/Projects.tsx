@@ -10,6 +10,7 @@ const PROJECTS = [
     image: "/images/eastpoint.png",
     objectPosition: "center",
     tag: "მეგა პროექტი",
+    year: "2013",
     name: "სავაჭრო ქალაქი Eastpoint",
     desc: "ღია კონცეფციის სავაჭრო ცენტრი — კომპლექსური ფასადური სისტემები და კომერციული ვიტრაჟები.",
     services: ["კომპლექსური შემინვა", "ფასადური სისტემები", "კომერციული ვიტრაჟები"],
@@ -20,9 +21,10 @@ const PROJECTS = [
     image: "/images/5.jpg",
     objectPosition: "center 60%",
     tag: "კომერციული",
+    year: "2012",
     name: "Mate Motors",
     desc: "ავტოსალონი და სერვის ცენტრი — ფასადის შემინვა და ალუმინის ვიტრაჟები.",
-    services: ["ფასადის შემინვა", "შესასვლელი ჯგუფი"],
+    services: ["ფასადის შემინვა", "ალუმინის ვიტრაჟები"],
   },
   {
     span: 6,
@@ -30,6 +32,7 @@ const PROJECTS = [
     image: "/images/4.jpeg",
     objectPosition: "center",
     tag: "პრემიუმ კლასი",
+    year: "2018",
     name: "Panorama Kvariati",
     desc: "ზღვისპირა პრემიუმ კომპლექსი — აივნების მინის მოაჯირები და პანორამული ვიტრაჟები.",
     services: ["მინის მოაჯირები", "პანორამული ვიტრაჟები"],
@@ -40,6 +43,7 @@ const PROJECTS = [
     image: "/images/7.jpeg",
     objectPosition: "center 70%",
     tag: "დასრულებული",
+    year: "2014",
     name: "სასტუმრო Tbilisi Tower",
     desc: "მასშტაბური კომერციული პროექტი — ფასადის სრული შემინვა და ალუმინის კონსტრუქციები.",
     services: ["ფასადის შემინვა", "ალუმინის კონსტრუქციები"],
@@ -126,7 +130,10 @@ export default function Projects() {
               </div>
               <div style={styles.cardOverlay} />
               <div className="project-content" style={styles.cardContent}>
-                <span style={styles.tag}>{project.tag}</span>
+                <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 8 }}>
+                  <span style={styles.tag}>{project.tag}</span>
+                  <span style={styles.year}>{project.year}</span>
+                </div>
                 <h3 style={styles.cardName}>{project.name}</h3>
                 <p style={styles.cardDesc}>{project.desc}</p>
                 <div className="project-services" style={styles.servicesRow}>
@@ -168,7 +175,10 @@ export default function Projects() {
               </div>
               <div style={styles.cardOverlay} />
               <div className="project-content" style={styles.cardContent}>
-                <span style={styles.tag}>{project.tag}</span>
+                <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 8 }}>
+                  <span style={styles.tag}>{project.tag}</span>
+                  <span style={styles.year}>{project.year}</span>
+                </div>
                 <h3 style={styles.cardName}>{project.name}</h3>
                 <p style={styles.cardDesc}>{project.desc}</p>
                 <div className="project-services" style={styles.servicesRow}>
@@ -413,7 +423,14 @@ const styles: Record<string, React.CSSProperties> = {
     textTransform: "uppercase" as const,
     borderRadius: 50,
     letterSpacing: "0.05em",
-    marginBottom: 12,
+  },
+
+  year: {
+    fontFamily: "'Inter', sans-serif",
+    fontSize: 12,
+    fontWeight: 600,
+    color: "rgba(255,255,255,0.5)",
+    letterSpacing: "0.05em",
   },
 
   cardName: {
