@@ -124,7 +124,7 @@ export default function Hero() {
             {COUNTER_DATA.map((item, i) => (
               <div key={i} style={styles.statItem}>
                 <span className="hero-stat-number" style={styles.statNumber}>
-                  {item.format ? formatNumber(counts[i]) : counts[i]}
+                  {counts[i]}
                   <span style={styles.statSuffix}>{item.suffix}</span>
                 </span>
                 <span style={styles.statLabel}>{item.label}</span>
