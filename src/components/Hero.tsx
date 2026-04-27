@@ -68,7 +68,7 @@ export default function Hero() {
       <div style={styles.imageWrapper}>
         <Image
           src="/images/eastpoint.png"
-          alt="Aluminum facade background"
+          alt="AluGraph — თანამედროვე ალუმინის ფასადი და მინის სისტემა პრემიუმ ხარისხის კომერციულ შენობაზე"
           fill
           priority
           style={styles.bgImage}

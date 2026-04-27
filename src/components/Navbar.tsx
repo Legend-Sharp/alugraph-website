@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
+import Link from "next/link";
 
 const NAV_LINKS = [
   { label: "\u10E1\u10D4\u10E0\u10D5\u10D8\u10E1\u10D4\u10D1\u10D8", href: "services" },
@@ -60,14 +61,15 @@ export default function Navbar() {
       >
         <div className="mx-auto flex items-center justify-between px-6 max-w-7xl">
           {/* Logo */}
-          <a
-            href="#"
+          <Link
+            href="/"
             onClick={(e) => {
               e.preventDefault();
               window.scrollTo({ top: 0, behavior: "smooth" });
             }}
+            aria-label="AluGraph — მთავარი გვერდი"
             className="select-none"
-            style={{ fontFamily: "Inter, sans-serif", fontSize: 22, fontWeight: 900 }}
+            style={{ fontFamily: "Inter, sans-serif", fontSize: 22, fontWeight: 900, textDecoration: "none" }}
           >
             <span className="text-white">Alu</span>
             <span
@@ -80,20 +82,25 @@ export default function Navbar() {
             >
               Graph
             </span>
-          </a>
+          </Link>
 
           {/* Desktop links */}
           <div className="hidden items-center md:flex" style={{ gap: 28 }}>
             {NAV_LINKS.map(({ label, href }) => (
-              <button
+              <a
                 key={href}
-                onClick={() => scrollTo(href)}
-                className="group relative bg-transparent border-none cursor-pointer"
+                href={`#${href}`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollTo(href);
+                }}
+                className="group relative"
                 style={{
                   fontSize: 14,
                   fontWeight: 500,
                   color: "#94a3b8",
                   transition: "color 0.3s",
+                  textDecoration: "none",
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.color = "#fff";
@@ -107,13 +114,17 @@ export default function Navbar() {
                   className="absolute -bottom-1 left-0 h-[2px] w-0 group-hover:w-full transition-all duration-300"
                   style={{ background: "#0ea5e9" }}
                 />
-              </button>
+              </a>
             ))}
 
             {/* CTA */}
-            <button
-              onClick={() => scrollTo("contact")}
-              className="cursor-pointer border-none transition-all duration-300"
+            <a
+              href="#contact"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollTo("contact");
+              }}
+              className="cursor-pointer transition-all duration-300"
               style={{
                 background: "linear-gradient(135deg, #0ea5e9, #3b82f6)",
                 color: "#fff",
@@ -124,6 +135,8 @@ export default function Navbar() {
                 borderRadius: 8,
                 whiteSpace: "nowrap",
                 boxShadow: "0 4px 20px rgba(14, 165, 233, 0.4)",
+                textDecoration: "none",
+                display: "inline-block",
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.background = "linear-gradient(135deg, #0284c7, #2563eb)";
@@ -137,7 +150,7 @@ export default function Navbar() {
               }}
             >
               {"\u10E8\u10D4\u10D7\u10D0\u10D5\u10D0\u10D6\u10D4\u10D1\u10D8\u10E1 \u10DB\u10DD\u10D7\u10EE\u10DD\u10D5\u10DC\u10D0"}
-            </button>
+            </a>
           </div>
 
           {/* Hamburger */}
@@ -180,19 +193,27 @@ export default function Navbar() {
       >
         <div className="flex flex-col items-center gap-8">
           {NAV_LINKS.map(({ label, href }) => (
-            <button
+            <a
               key={href}
-              onClick={() => scrollTo(href)}
-              className="bg-transparent border-none cursor-pointer text-[#94a3b8] hover:text-white transition-colors duration-300"
-              style={{ fontSize: 18, fontWeight: 500 }}
+              href={`#${href}`}
+              onClick={(e) => {
+                e.preventDefault();
+                scrollTo(href);
+              }}
+              className="cursor-pointer text-[#94a3b8] hover:text-white transition-colors duration-300"
+              style={{ fontSize: 18, fontWeight: 500, textDecoration: "none" }}
             >
               {label}
-            </button>
+            </a>
           ))}
 
-          <button
-            onClick={() => scrollTo("contact")}
-            className="cursor-pointer border-none mt-4 transition-all duration-300"
+          <a
+            href="#contact"
+            onClick={(e) => {
+              e.preventDefault();
+              scrollTo("contact");
+            }}
+            className="cursor-pointer mt-4 transition-all duration-300"
             style={{
               background: "#0284c7",
               color: "#fff",
@@ -202,10 +223,12 @@ export default function Navbar() {
               fontWeight: 700,
               borderRadius: 8,
               whiteSpace: "nowrap",
+              textDecoration: "none",
+              display: "inline-block",
             }}
           >
             {"\u10E8\u10D4\u10D7\u10D0\u10D5\u10D0\u10D6\u10D4\u10D1\u10D8\u10E1 \u10DB\u10DD\u10D7\u10EE\u10DD\u10D5\u10DC\u10D0"}
-          </button>
+          </a>
         </div>
       </div>
     </>

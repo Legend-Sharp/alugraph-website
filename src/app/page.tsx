@@ -15,14 +15,16 @@ export default function Home() {
     <>
       <Preloader />
       <Navbar />
-      <Hero />
-      <Services />
-      <Projects />
-      <Process />
-      <WhyUs />
-      <Partners />
-      <CTA />
-      <Contact />
+      <main id="main-content">
+        <Hero />
+        <Services />
+        <Projects />
+        <Process />
+        <WhyUs />
+        <Partners />
+        <CTA />
+        <Contact />
+      </main>
       <Footer />
     </>
   );

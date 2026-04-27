@@ -73,7 +73,7 @@ export default function WhyUs() {
             <div style={styles.imageWrapper}>
               <Image
                 src="/images/3-original.jpg"
-                alt="Alugraph project"
+                alt="AluGraph-ის მიერ დასრულებული ალუმინის ფასადის და მინის კონსტრუქციის პროექტი"
                 fill
                 style={{ objectFit: "cover" }}
                 className="rounded-2xl"
